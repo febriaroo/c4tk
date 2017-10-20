@@ -1,0 +1,22 @@
+/*#image {
+	border-radius: 200px;
+	width: 800px;
+	height: 800px
+	background: grey
+}*/
+
+div#x i {
+	color: #e74c3c !important;;
+}
+
+div#x {
+	/*background-color: #e74c3c;*/
+}
+
+div#v {
+	/*background-color: #2ecc71;*/
+}
+
+div#v i {
+	color: #2ecc71 !important;;
+}
