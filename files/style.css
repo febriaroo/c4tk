@@ -1,0 +1,30 @@
+.app-content {
+  padding: 3%;
+}
+
+div.button-pesan {
+  background-color: #2b9 !important;
+  color: #fff !important;
+  width: 80% !important;
+  border-radius: 200px !important;
+}
+
+div.batal-btn {
+  background-color: #E54 !important;
+  color: #fff !important;
+  width: 80% !important;
+  border-radius: 200px !important;
+}
+
+div.app-topbar {
+  background: #2b9 !important;
+}
+
+div.app-button#pesanMakanan {
+  background-color: #2b9;
+  color: #fff !important;
+}
+
+img.pp-hero {
+  border-radius: 200px !important;
+}

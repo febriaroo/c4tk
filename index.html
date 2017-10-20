@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JAKAT</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <link rel="stylesheet" href="files/app.min.css">
+    <link rel="stylesheet" href="files/style.css">
+    <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials.css" />
+  </head>
+  <body>
+    <div class="app-page" data-page="home">
+      <div class="app-topbar">
+        <div class="app-title">JAKAT</div>
+      </div>
+      <div class="app-content">
+        <div class="app-section">
+          <input type="file" id="imageProduct" placeholder="image" class="app-input">
+        </div>
+        <div class="app-section">
+          <select id="kategori" placeholder="Kategori" class="app-input">
+            <option value="pakaian">Pakaian</option>
+            <option value="seragam">Seragam</option>
+            <option value="sepatu">Sepatu</option>
+            <option value="tas">Tas</option>
+            <option value="buku">Buku</option>
+          </select>
+          <br>
+          <input type="number" id="kuantitas" placeholder="Kuantitas" class="app-input">
+          <br>
+        </div>
+        <div class="app-section">
+          <center>
+            <h2>Saudara yang memberkati</h2>
+          </center>
+          <input type="text" id="nameDonatur" placeholder="Name" class="app-input">
+          <br>
+          <input type="email" id="emailDonatur" placeholder="Email" class="app-input">
+          <br>
+          <input type="phone" id="phonenumberDonatur" placeholder="Nomor Telepon" class="app-input">
+          <br>
+          <input type="text" id="addressDonatur" placeholder="Alamat" class="app-input">
+          <br>
+          </div>
+          <div class="app-button" id="bagikanBerkat" style="color:#2b9">Bagikan Berkat</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="app-page" data-page="thankyou">
+      <div class="app-topbar">
+        <div class="app-button left" data-back data-autotitle></div>
+        <div class="app-title">JAKAT</div>
+      </div>
+      <div class="app-content">
+        <center>
+          <h1>Terima Kasih kamu telah menjadi berkat</h1>
+        </center>
+        <div class="app-section" align="center">
+          <br>
+          <img src="http://via.placeholder.com/300x300" style="border-radius: 50%; width: 200px;height: 200px;">
+          <br/>
+          <h2>Tim JAKAT akan menghubungi-mu via email tentang penerima berkat</h2>
+          <h3>Bagikan pengalaman-mu menjadi Berkat untuk orang lain!</h3>
+          <div id="shareRoundIcons"></div>
+        </div>
+        <br>
+      </div>
+    </div>
+
+    <div class="app-page" data-page="profil">
+      <div class="app-topbar">
+        <div class="app-button left" data-back data-autotitle></div>
+        <div class="app-title">Profil HERO</div>
+      </div>
+      <div class="app-content">
+        <div class="app-section" align="center">
+          <br>
+          <!-- <img src="http://via.placeholder.com/200x200" class="pp-hero"> -->
+          <img src="https://images.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.whatsonxiamen.com%2Fnews_images%2F10cf8ef420258384a8ab9df1_pornstarmain2.jpg&f=1" class="pp-hero" style="width:200px;height:200px">
+          <h1>Sugiyono</h1>
+          <br>
+          <h4>HERO Akan Tiba Dalam :</h4>
+          <h2>5 Menit</h2>
+          <br>
+          <div class="app-button batal-btn">Batalkan Pesanan</div>
+          <br>
+        </div>
+      </div>
+    </div>
+
+    <script src="files/zepto.js"></script>
+    <script src="files/app.min.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+     <script src="files/controller.js"></script>
+     <script
+      src="https://code.jquery.com/jquery-3.2.1.min.js"
+      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials.min.js"></script>
+    
+
+  </body>
+</html>
