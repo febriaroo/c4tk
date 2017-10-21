@@ -3,6 +3,10 @@
     margin-top: 0.6%;
 }
 
+.wrap-slider img{
+    width: 100%;
+}
+
 .pic-logo{
     width: 200px;
     height: 60px;
@@ -55,9 +59,33 @@ hr{
 
 footer{
     width: 100%;
-    height: 300px;
     background: #24292E;
     margin-top: 1.2%;
+}
+
+.container.has-text-centered{
+    float: left;
+}
+
+footer .hero-body{
+    padding-top: 1%;
+}
+
+footer .column{
+    background-color: transparent;
+    margin: 0;
+}
+
+
+.sosial .icon{
+    font-size: 2em;
+    width: 17%;
+    margin-top: 10%;
+}
+
+.copyright{
+    margin-top: 10%;
+    font-size: 12px;
 }
 
 .hero.is-jakat {
