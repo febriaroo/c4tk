@@ -1,71 +1,184 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Jakat Dashboard</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css" integrity="sha256-HEtF7HLJZSC3Le1HcsWbz1hDYFPZCqDhZa9QsCgVUdw=" crossorigin="anonymous" />
-  <link rel="stylesheet" type="text/css" href="files/index.css">
-</head>
-<body>
-  <section class="hero is-success is-fullheight">
-    <div class="hero-body">
-      <div class="container has-text-centered">
-        <div class="column is-4 is-offset-4">
-          <h3 class="title has-text-grey">Jakat</h3>
-          <p class="subtitle has-text-grey has-text-centered has-text-weight-medium">"Tetapi mereka yang ingin kaya terjatuh ke dalam pencobaan, ke dalam jerat dan ke dalam berbagai-bagai nafsu yang hampa dan yang mencelakakan, yang menenggelamkan manusia ke dalam keruntuhan dan kebinasaan."</p>
-          <div class="box">
-            <figure class="avatar">
-              <!-- <img src="https://placehold.it/128x128"> -->
-              <img src="files/logo.png" class="logo">
-            </figure>
-            <form action="get.html" method="GET">
-              <!-- <div class="field">
-                <div class="control">
-                  <input class="input is-large" type="email" placeholder="Your Email" autofocus="">
-                </div>
-              </div>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello Bulma!</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css">
+  </head>
+  <body>
+  <section class="section">
+    <div class="container">
+      <h1 class="title">
+       Donasi Barang Bekasmu Untuk Menjadi Berkat<br>
+       Saya ingin memberkati dengan menyumbangkan:<br>
+      </h1>
+      <a class="button is-primary" id="addItem">
+        <i class="fa fa-plus"></i> Add Item
+      </a>
+      <br/>
+      <br/>
 
-              <div class="field">
-                <div class="control">
-                  <input class="input is-large" type="password" placeholder="Your Password">
-                </div>
-              </div>
-              <div class="field">
-                <label class="checkbox">
-                  <input type="checkbox">
-                  Remember me
-                </label>
-              </div> -->
-              <div class="field">
-              	<label class="label is-large">Kategori</label>
-              	<div class="control">
-              		<div class="select is-large is-fullwidth">
-	              		<select class="is-fullwidth">
-		              		<option selected disabled>Barang yang dibutuhkan</option>
-		              		<option value="">Kategori 1</option>
-		              		<option value="">Kategori 2</option>
-		              		<option value="">Kategori 3</option>
-		              		<option value="">Kategori 4</option>
-		              		<option value="">Kategori 5</option>
-		              	</select>
-              		</div>
-              	</div>
-              </div>
-              <br>
-              <!-- <a class="button is-block is-info is-large">Login</a> -->
-              <input class="button is-block is-info is-large is-fullwidth" type="submit" value="Cari">
-            </form>
+      <div class="columns">
+        <div class="column">
+          <div class="field has-addons">
+          <div class="control is-expanded">
+            <div class="select is-fullwidth">
+              <select name="tipeBarang" onchange="changeBarang()" id="tipeBarang">
+                <option value="pakaian">Pakaian</option>
+                <option value="sepatu">Sepatu</option>
+                <option value="elektronik">Barang Elektronik</option>
+              </select>
+            </div>
           </div>
-          <p class="has-text-grey">
-            Jakat - Jadi Berkat
-          </p>
+        </div>
         </div>
       </div>
-    </div>
-  </section>
-</body>
+
+      <div class="column elektronik is-flex">
+
+        <div class="field">
+          <label class="label">Category</label>
+          <div class="control">
+            <div class="select">
+              <select >
+                <option value="samsung">Laptop</option>
+                <option value="smartphone">Smartphone</option>
+                <option value="handphone">Handphone</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Merek</label>
+          <div class="control">
+            <div class="select">
+              <select>
+                <option value="samsung">Samsung</option>
+                <option value="">Iphone</option>
+                <option value="">Oppo</option>
+                <option value="">Vivo</option>
+                <option value="">Nokia</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Tipe</label>
+          <div class="control">
+            <input class="input is-success" type="text" placeholder="Text input" value="bulma">
+          </div>
+        </div>
+
+        <div class="field">
+            <label class="label">Upload gambar</label>
+          <div class="control">
+            <input class="input" type="file">
+          </div>
+        </div>
+
+
+        <div class="field">
+          <label class="label">Kondisi</label>
+          <div class="control">
+            <label class="radio">
+              <input type="radio" name="kondisi">
+              Baru
+            </label><br/>
+            <label class="radio">
+              <input type="radio" name="kondisi">
+              Bekas dan berfungsi
+            </label><br/>
+            <label class="radio">
+              <input type="radio" name="kondisi">
+              Bekas dan Rusak
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="column pakaian is-hidden">
+        Pakaian
+        <div class="field">
+          <label class="label">Jenis pakaian untuk</label>
+          <div class="control">
+            <div class="select">
+              <select >
+                <option value="perempuan">Perempuan</option>
+                <option value="lakilaki">Laki-laki</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Size</label>
+          <div class="control">
+            <input class="column is-2 input" type="text" placeholder="size">
+          </div>
+        </div>
+
+        <div class="field">
+            <label class="label">Upload gambar</label>
+          <div class="control">
+            <input class="input" type="file">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Jumlah</label>
+          <div class="control">
+            <input class="column is-2 input" type="number" placeholder="Jumlah">
+          </div>
+        </div>
+      </div>
+
+      <div class="column sepatu  is-hidden">
+        Sepatu
+        <div class="field">
+          <label class="label">Jenis sepatu untuk</label>
+          <div class="control">
+            <div class="select">
+              <select >
+                <option value="perempuan">Perempuan</option>
+                <option value="lakilaki">Laki-laki</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Size</label>
+          <div class="control">
+            <input class="column is-2 input" type="text" placeholder="size">
+          </div>
+        </div>
+
+        <div class="field">
+            <label class="label">Upload gambar</label>
+          <div class="control">
+            <input class="input" type="file">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Jumlah</label>
+          <div class="control">
+            <input class="column is-2 input" type="number" placeholder="Jumlah">
+          </div>
+        </div>
+      </div>
+    </section>
+    <script type="text/javascript">
+      function changeBarang(){
+        var e = document.getElementById("tipeBarang");
+        var tipeBarang = e.options[e.selectedIndex].value;
+        $(this).removeClass("is-flex").removeClass("is-hidden");
+        $("."+tipeBarang).addClass("is-flex").removeClass("is-hidden");
+      }
+    </script>>
+  </body>
 </html>
