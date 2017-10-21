@@ -65,8 +65,12 @@ function firebaseConfig(){
 
 function submitUserToFirebase(){
   var category = $('#kategori').val();
-  var ref = firebase.database().ref('products/' + category);
+  var ref = firebase.database().ref('products/' + category).push();
+  var timestamp = Number(new Date());
+  var pushKey = ref.key;
+  var storageRef = firebase.storage().ref(pushKey);
   var qty = $('#kuantitas').val();
+  var file_data = $('#imageProduct').prop('files')[0];
 
   var nameToSend = $('#nameDonatur').val();
   var emailToSend = $('#emailDonatur').val();
@@ -78,9 +82,11 @@ function submitUserToFirebase(){
     "email":emailToSend,
     "phone":phoneToSend,
     "address": addressToSend,
-    "qty":qty
+    "qty":qty,
+    "image": pushKey
   };
+  storageRef.put(file_data);
   console.log(data);
 
-  ref.push().set(dataToSend);
+  ref.set(dataToSend);
 }
