@@ -1,30 +1,22 @@
-.app-content {
-  padding: 3%;
+/*#image {
+	border-radius: 200px;
+	width: 800px;
+	height: 800px
+	background: grey
+}*/
+
+div#x i {
+	color: #e74c3c !important;;
 }
 
-div.button-pesan {
-  background-color: #2b9 !important;
-  color: #fff !important;
-  width: 80% !important;
-  border-radius: 200px !important;
+div#x {
+	/*background-color: #e74c3c;*/
 }
 
-div.batal-btn {
-  background-color: #E54 !important;
-  color: #fff !important;
-  width: 80% !important;
-  border-radius: 200px !important;
+div#v {
+	/*background-color: #2ecc71;*/
 }
 
-div.app-topbar {
-  background: #2b9 !important;
-}
-
-div.app-button#pesanMakanan {
-  background-color: #2b9;
-  color: #fff !important;
-}
-
-img.pp-hero {
-  border-radius: 200px !important;
+div#v i {
+	color: #2ecc71 !important;;
 }

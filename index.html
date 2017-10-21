@@ -1,83 +1,71 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>JAKAT</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-    <link rel="stylesheet" href="files/app.min.css">
-    <link rel="stylesheet" href="files/style.css">
-    <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials.css" />
-  </head>
-  <body>
-    <div class="app-page" data-page="home">
-      <div class="app-topbar">
-        <div class="app-title">JAKAT</div>
-      </div>
-      <div class="app-content">
-        <div class="app-section">
-          <input type="file" id="imageProduct" placeholder="image">
-        </div>
-        <div class="app-section">
-          <select id="kategori" placeholder="Kategori" class="app-input">
-            <option value="pakaian">Pakaian</option>
-            <option value="seragam">Seragam</option>
-            <option value="sepatu">Sepatu</option>
-            <option value="tas">Tas</option>
-            <option value="buku">Buku</option>
-          </select>
-          <br>
-          <input type="number" id="kuantitas" placeholder="Kuantitas" class="app-input">
-          <br>
-        </div>
-        <div class="app-section">
-          <center>
-            <h2>Saudara yang memberkati</h2>
-          </center>
-          <input type="text" id="nameDonatur" placeholder="Name" class="app-input">
-          <br>
-          <input type="email" id="emailDonatur" placeholder="Email" class="app-input">
-          <br>
-          <input type="phone" id="phonenumberDonatur" placeholder="Nomor Telepon" class="app-input">
-          <br>
-          <input type="text" id="addressDonatur" placeholder="Alamat" class="app-input">
-          <br>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jakat Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css" integrity="sha256-HEtF7HLJZSC3Le1HcsWbz1hDYFPZCqDhZa9QsCgVUdw=" crossorigin="anonymous" />
+  <link rel="stylesheet" type="text/css" href="files/index.css">
+</head>
+<body>
+  <section class="hero is-success is-fullheight">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <div class="column is-4 is-offset-4">
+          <h3 class="title has-text-grey">Jakat</h3>
+          <p class="subtitle has-text-grey has-text-centered has-text-weight-medium">"Tetapi mereka yang ingin kaya terjatuh ke dalam pencobaan, ke dalam jerat dan ke dalam berbagai-bagai nafsu yang hampa dan yang mencelakakan, yang menenggelamkan manusia ke dalam keruntuhan dan kebinasaan."</p>
+          <div class="box">
+            <figure class="avatar">
+              <!-- <img src="https://placehold.it/128x128"> -->
+              <img src="files/logo.png" class="logo">
+            </figure>
+            <form action="get.html" method="GET">
+              <!-- <div class="field">
+                <div class="control">
+                  <input class="input is-large" type="email" placeholder="Your Email" autofocus="">
+                </div>
+              </div>
+
+              <div class="field">
+                <div class="control">
+                  <input class="input is-large" type="password" placeholder="Your Password">
+                </div>
+              </div>
+              <div class="field">
+                <label class="checkbox">
+                  <input type="checkbox">
+                  Remember me
+                </label>
+              </div> -->
+              <div class="field">
+              	<label class="label is-large">Kategori</label>
+              	<div class="control">
+              		<div class="select is-large is-fullwidth">
+	              		<select class="is-fullwidth">
+		              		<option selected disabled>Barang yang dibutuhkan</option>
+		              		<option value="">Kategori 1</option>
+		              		<option value="">Kategori 2</option>
+		              		<option value="">Kategori 3</option>
+		              		<option value="">Kategori 4</option>
+		              		<option value="">Kategori 5</option>
+		              	</select>
+              		</div>
+              	</div>
+              </div>
+              <br>
+              <!-- <a class="button is-block is-info is-large">Login</a> -->
+              <input class="button is-block is-info is-large is-fullwidth" type="submit" value="Cari">
+            </form>
           </div>
-          <div class="app-button" id="bagikanBerkat" style="color:#2b9">Bagikan Berkat</div>
+          <p class="has-text-grey">
+            Jakat - Jadi Berkat
+          </p>
         </div>
       </div>
     </div>
-
-    <div class="app-page" data-page="thankyou">
-      <div class="app-topbar">
-        <div class="app-button left" data-back data-autotitle></div>
-        <div class="app-title">JAKAT</div>
-      </div>
-      <div class="app-content">
-        <center>
-          <h1>Terima Kasih kamu telah menjadi berkat</h1>
-        </center>
-        <div class="app-section" align="center">
-          <br>
-          <img src="http://via.placeholder.com/300x300" style="border-radius: 50%; width: 200px;height: 200px;">
-          <br/>
-          <h2>Tim JAKAT akan menghubungi-mu via email tentang penerima berkat</h2>
-          <h3>Bagikan pengalaman-mu menjadi Berkat untuk orang lain!</h3>
-          <div id="shareRoundIcons"></div>
-        </div>
-        <br>
-      </div>
-    </div>
-
-    <script src="files/zepto.js"></script>
-    <script src="files/app.min.js"></script>
-     <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
-     <script src="files/controller.js"></script>
-     <script
-      src="https://code.jquery.com/jquery-3.2.1.min.js"
-      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-      crossorigin="anonymous"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials.min.js"></script>
-    <script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=false"></script>
-    
-
-  </body>
+  </section>
+</body>
 </html>
