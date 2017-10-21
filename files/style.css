@@ -19,7 +19,7 @@
 }
 
 .title.is-4.mycolor{
-    color: #4a4a4a;
+    color: #333;
 }
 
 .message-body{
@@ -52,3 +52,80 @@ footer{
     margin-top: 1.2%;
 }
 
+.hero.is-jakat {
+  background-color: #065671;
+  color: #fff;
+}
+
+.hero.is-jakat a:not(.button),
+.hero.is-jakat strong {
+  color: inherit;
+}
+
+.hero.is-jakat .title {
+  color: #fff;
+}
+
+.hero.is-jakat .subtitle {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.hero.is-jakat .subtitle a:not(.button),
+.hero.is-jakat .subtitle strong {
+  color: #fff;
+}
+
+@media screen and (max-width: 1023px) {
+  .hero.is-jakat .navbar-menu {
+    background-color: #065671;
+  }
+}
+
+.hero.is-jakat .navbar-item,
+.hero.is-jakat .navbar-link {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.hero.is-jakat a.navbar-item:hover, .hero.is-jakat a.navbar-item.is-active,
+.hero.is-jakat .navbar-link:hover,
+.hero.is-jakat .navbar-link.is-active {
+  background-color: #20bc56;
+  color: #fff;
+}
+
+.hero.is-jakat .tabs a {
+  color: #fff;
+  opacity: 0.9;
+}
+
+.hero.is-jakat .tabs a:hover {
+  opacity: 1;
+}
+
+.hero.is-jakat .tabs li.is-active a {
+  opacity: 1;
+}
+
+.hero.is-jakat .tabs.is-boxed a, .hero.is-jakat .tabs.is-toggle a {
+  color: #fff;
+}
+
+.hero.is-jakat .tabs.is-boxed a:hover, .hero.is-jakat .tabs.is-toggle a:hover {
+  background-color: rgba(10, 10, 10, 0.1);
+}
+
+.hero.is-jakat .tabs.is-boxed li.is-active a, .hero.is-jakat .tabs.is-boxed li.is-active a:hover, .hero.is-jakat .tabs.is-toggle li.is-active a, .hero.is-jakat .tabs.is-toggle li.is-active a:hover {
+  background-color: #fff;
+  border-color: #fff;
+  color: #065671;
+}
+
+.hero.is-jakat.is-bold {
+  background-image: linear-gradient(141deg, #12af2f 0%, #065671 71%, #2ce28a 100%);
+}
+
+@media screen and (max-width: 768px) {
+  .hero.is-jakat.is-bold .navbar-menu {
+    background-image: linear-gradient(141deg, #12af2f 0%, #065671 71%, #2ce28a 100%);
+  }
+}
