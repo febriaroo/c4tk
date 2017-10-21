@@ -2,5 +2,52 @@
     width: 100%;
     height: 500px;
     background: lightblue;
-    margin-top: 1.5%;
+    margin-top: 1.2%;
+}
+
+.hero .navbar{
+    margin-top: 1%;
+}
+
+.columns{
+    margin-top: 3%;
+}
+
+.column{
+    margin: 0 1%;
+    background-color: white;
+}
+
+.title.is-4.mycolor{
+    color: #4a4a4a;
+}
+
+.message-body{
+    margin-top: 3%;
+}
+
+.subtitle:not(:last-child), .title:not(:last-child) {
+    margin-bottom: 1rem;
+}
+
+.button.is-info.is-inverted{
+    margin-top: 2.5%;
+    width: 15%;
+    font-size: 17px;
+}
+
+hr{
+    margin-top: 4%;
+}
+
+.level.is-mobile{
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+footer{
+    width: 100%;
+    height: 300px;
+    background: #24292E;
+    margin-top: 1.2%;
 }
