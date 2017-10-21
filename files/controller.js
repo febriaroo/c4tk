@@ -13,8 +13,7 @@ $(page)
           cancelButton : 'Tidak'
         }, function (tryAgain) {
           if (tryAgain) {
-            submitUserToFirebase($(this));
-            submitGoodsToFirebase($(this));
+            submitUserToFirebase();
             App.load('thankyou')
           }
         });
@@ -64,58 +63,24 @@ function firebaseConfig(){
 	firebase.initializeApp(config);
 }
 
-function submitUserToFirebase($form){
-	console.log("submit to Firebase");
-	var ref = firebase.database().ref('users');
-	var storageRef = firebase.storage().ref();
-	ref.on("value", function(snapshot){
-		console.log(snapshot.val() );
-		data = snapshot.val();
-	})
+function submitUserToFirebase(){
+  var category = $('#kategori').val();
+  var ref = firebase.database().ref('products/' + category);
+  var qty = $('#kuantitas').val();
 
-    //make the submit disabled
-    $form.find("#bagikanBerkat").prop('disabled', true);
+  var nameToSend = $('#nameDonatur').val();
+  var emailToSend = $('#emailDonatur').val();
+  var addressToSend = $('#addressDonatur').val();
+  var phoneToSend = $('#phonenumberDonatur').val();
 
-    var nameToSend = $('#nameDonatur').val();
-    var emailToSend = $('#emailDonatur').val();
-    var addressToSend = $('#addressDonatur').val();
-    var phoneToSend = $('#phonenumberDonatur').val();
+  var dataToSend = {
+    "name": nameToSend,
+    "email":emailToSend,
+    "phone":phoneToSend,
+    "address": addressToSend,
+    "qty":qty
+  };
+  console.log(data);
 
-    var dataToSend = {
-      "name": nameToSend,
-      "email":emailToSend,
-      "phone":phoneToSend,
-      "address": addressToSend
-    };
-
-    data.push(dataToSend);
-    console.log(data);
-
-    ref.set(data);
-}
-
-function submitGoodsToFirebase($form){
-	console.log("submit to Firebase");
-	var ref = firebase.database().ref('products');
-	var storageRef = firebase.storage().ref();
-	ref.on("value", function(snapshot){
-		console.log(snapshot.val() );
-		data = snapshot.val();
-	})
-
-    //make the submit disabled
-    $form.find("#bagikanBerkat").prop('disabled', true);
-
-    var category = $('#kategori').val();
-    var qty = $('#kuantitas').val();
-
-    var dataToSend = {
-      "category": category,
-      "qty":qty
-    };
-
-    data.push(dataToSend);
-    console.log(data);
-
-    ref.set(data);
+  ref.push().set(dataToSend);
 }
