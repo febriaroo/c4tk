@@ -3,6 +3,10 @@
     margin-top: 0.6%;
 }
 
+.wrap-slider img{
+    width: 100%;
+}
+
 .pic-logo{
     width: 200px;
     height: 60px;
