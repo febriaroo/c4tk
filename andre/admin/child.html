@@ -55,7 +55,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit alias nesciun
             <label class="label is-large">Need</label>
             <div class="control">
               <div class="select is-large is-fullwidth">
-                <select id="size" class="is-fullwidth">
+                <select id="needs" class="is-fullwidth">
                   <optgroup label="Water">
                   <option value="s">S</option>
                   <option value="m">M</option>
@@ -94,17 +94,22 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit alias nesciun
               </div>
             </div>
           </div>
-          <br>
+          <!-- <br>
           <div class="field">
             <label class="label is-large">DOB</label>
             <div class="control">
               <input class="input is-large" type="date" id="dob">
             </div>
-          </div>
+          </div> -->
         </div>
         <br>
         <br>
-        <center><button class="button is-primary is-large" style="width:100%">Submit</button></center>
+        <center>
+          <button class="button is-primary is-large" style="width:100%" onclick="submitChild()">Submit</button>
+        </center>
       </section>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+      <script src="files/main.js"></script>
   </body>
 </html>
