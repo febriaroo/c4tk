@@ -11,7 +11,8 @@
   <section class="section">
     <div class="container">
       <h1 class="title">
-       Detail Donasi
+       Donasi Barang Bekasmu Untuk Menjadi Berkat<br>
+       Saya ingin memberkati dengan menyumbangkan:<br>
       </h1>
       <a class="button is-primary" id="addItem">
         <i class="fa fa-plus"></i> Add Item
@@ -24,7 +25,7 @@
           <div class="field has-addons">
           <div class="control is-expanded">
             <div class="select is-fullwidth">
-              <select name="country">
+              <select name="tipeBarang" onchange="changeBarang()" id="tipeBarang">
                 <option value="pakaian">Pakaian</option>
                 <option value="sepatu">Sepatu</option>
                 <option value="elektronik">Barang Elektronik</option>
@@ -35,35 +36,149 @@
         </div>
       </div>
 
-      <div class="columns pakaian">
-        <div class="column">
-          Pakaian 
-        </div>
-        <div class="column">
-          <a class="button is-primary" id="addItem">
-            <i class="fa fa-plus"></i>
-          </a>
-        </div>
-        <div class="column">
-          <select name="sizes">
-                <option value="s">S</option>
-                <option value="m">M</option>
-                <option value="l">L</option>
-                <option value="xl">XL</option>
-          </select>
-        </div>
-        <div class="column">
-          <input class="input" type="number" placeholder="qty">
-        </div>
-      </div>
-      <div class="itemDetail">
-        
+      <div class="column elektronik is-flex">
 
         <div class="field">
+          <label class="label">Category</label>
+          <div class="control">
+            <div class="select">
+              <select >
+                <option value="samsung">Laptop</option>
+                <option value="smartphone">Smartphone</option>
+                <option value="handphone">Handphone</option>
+              </select>
+            </div>
+          </div>
+        </div>
 
+        <div class="field">
+          <label class="label">Merek</label>
+          <div class="control">
+            <div class="select">
+              <select>
+                <option value="samsung">Samsung</option>
+                <option value="">Iphone</option>
+                <option value="">Oppo</option>
+                <option value="">Vivo</option>
+                <option value="">Nokia</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Tipe</label>
+          <div class="control">
+            <input class="input is-success" type="text" placeholder="Text input" value="bulma">
+          </div>
+        </div>
+
+        <div class="field">
+            <label class="label">Upload gambar</label>
+          <div class="control">
+            <input class="input" type="file">
+          </div>
+        </div>
+
+
+        <div class="field">
+          <label class="label">Kondisi</label>
+          <div class="control">
+            <label class="radio">
+              <input type="radio" name="kondisi">
+              Baru
+            </label><br/>
+            <label class="radio">
+              <input type="radio" name="kondisi">
+              Bekas dan berfungsi
+            </label><br/>
+            <label class="radio">
+              <input type="radio" name="kondisi">
+              Bekas dan Rusak
+            </label>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+
+      <div class="column pakaian is-hidden">
+        Pakaian
+        <div class="field">
+          <label class="label">Jenis pakaian untuk</label>
+          <div class="control">
+            <div class="select">
+              <select >
+                <option value="perempuan">Perempuan</option>
+                <option value="lakilaki">Laki-laki</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Size</label>
+          <div class="control">
+            <input class="column is-2 input" type="text" placeholder="size">
+          </div>
+        </div>
+
+        <div class="field">
+            <label class="label">Upload gambar</label>
+          <div class="control">
+            <input class="input" type="file">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Jumlah</label>
+          <div class="control">
+            <input class="column is-2 input" type="number" placeholder="Jumlah">
+          </div>
+        </div>
+      </div>
+
+      <div class="column sepatu  is-hidden">
+        Sepatu
+        <div class="field">
+          <label class="label">Jenis sepatu untuk</label>
+          <div class="control">
+            <div class="select">
+              <select >
+                <option value="perempuan">Perempuan</option>
+                <option value="lakilaki">Laki-laki</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Size</label>
+          <div class="control">
+            <input class="column is-2 input" type="text" placeholder="size">
+          </div>
+        </div>
+
+        <div class="field">
+            <label class="label">Upload gambar</label>
+          <div class="control">
+            <input class="input" type="file">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Jumlah</label>
+          <div class="control">
+            <input class="column is-2 input" type="number" placeholder="Jumlah">
+          </div>
+        </div>
+      </div>
+    </section>
+    <script type="text/javascript">
+      function changeBarang(){
+        var e = document.getElementById("tipeBarang");
+        var tipeBarang = e.options[e.selectedIndex].value;
+        $(this).removeClass("is-flex").removeClass("is-hidden");
+        $("."+tipeBarang).addClass("is-flex").removeClass("is-hidden");
+      }
+    </script>>
   </body>
 </html>
