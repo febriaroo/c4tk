@@ -55,7 +55,6 @@ hr{
 
 footer{
     width: 100%;
-    
     background: #24292E;
     margin-top: 1.2%;
 }
@@ -71,6 +70,18 @@ footer .hero-body{
 footer .column{
     background-color: transparent;
     margin: 0;
+}
+
+
+.sosial .icon{
+    font-size: 2em;
+    width: 17%;
+    margin-top: 10%;
+}
+
+.copyright{
+    margin-top: 10%;
+    font-size: 12px;
 }
 
 .hero.is-jakat {
