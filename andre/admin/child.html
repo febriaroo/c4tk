@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css">
+  </head>
+  <body>
+    <section class="section">
+        <div class="container">
+          <h1 class="title">
+            <center>Kids Input</center>
+          </h1>
+          <hr>
+          <div class="field">
+            <label class="label is-large">Nama</label>
+            <div class="control">
+              <input class="input is-large" type="text" placeholder="Uvuvwevwevwe Onyetenyevwe Ugwemubwem Ossas" id="nama">
+            </div>
+          </div>
+          <br>
+          <div class="field">
+            <label class="label is-large">DOB</label>
+            <div class="control">
+              <input class="input is-large" type="date" id="dob">
+            </div>
+          </div>
+          <br>
+          <div class="field">
+            <label class="label is-large">Status</label>
+            <div class="control">
+              <div class="select is-large is-fullwidth">
+                <select id="status" class="is-fullwidth">
+                  <option selected disabled>Published / Unpublished / Received</option>
+                  <option value="published">Published</option>
+                  <option value="unpublished">Unpublished</option>
+                  <option value="received">Received</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <br>
+          <div class="field">
+            <label class="label is-large">Story</label>
+            <div class="control">
+              <textarea class="textarea is-large" type="text" id="story" rows="3">
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit alias nesciunt, fugiat beatae quo vero nostrum consequatur dolorum ipsa! Aliquid, delectus, nulla molestias accusantium omnis dolore? Qui dolore dolor dolorem.
+              </textarea>
+            </div>
+          </div>
+          <br>
+          <div class="field">
+            <label class="label is-large">Size</label>
+            <div class="control">
+              <div class="select is-large is-fullwidth">
+                <select id="size" class="is-fullwidth">
+                  <option selected disabled>Clothes Size</option>
+                  <option value="s">S</option>
+                  <option value="m">M</option>
+                  <option value="l">L</option>
+                  <option value="xl">XL</option>
+                  <option value="xxl">XXL</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <br>
+          <div class="field">
+            <label class="label is-large">DOB</label>
+            <div class="control">
+              <input class="input is-large" type="date" id="dob">
+            </div>
+          </div>
+        </div>
+        <br>
+        <br>
+        <center><button class="button is-primary is-large" style="width:100%">Submit</button></center>
+      </section>
+  </body>
+</html>
