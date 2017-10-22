@@ -43,10 +43,10 @@
 
       <div class="column form-elektronik is-hidden">
         <div class="field">
-          <label class="label">Tipe</label>
+          <label class="label">Tipe Barang</label>
           <div class="control">
             <div class="select is-fullwidth is-large">
-              <select>
+              <select id="tipe_barang">
                 <option value="laptop">Laptop</option>
                 <option value="smartphone">Smartphone</option>
                 <option value="handphone">Handphone</option>
@@ -59,7 +59,7 @@
           <label class="label">Merek</label>
           <div class="control">
             <div class="select is-fullwidth is-large">
-              <select>
+              <select id="merek">
                 <option value="samsung">Samsung</option>
                 <option value="iphone">iPhone</option>
                 <option value="">Oppo</option>
@@ -73,7 +73,7 @@
         <div class="field">
           <label class="label">Tipe</label>
           <div class="control is-fullwidth">
-            <input class="input is-large is-success" type="text" placeholder="Text input" value="bulma">
+            <input class="input is-large" type="text" placeholder="Tipe Perangkat" id="tipe_perangkat">
           </div>
         </div>
 
@@ -82,7 +82,7 @@
         <div class="field">
           <div class="file has-name is-boxed">
             <label class="file-label">
-              <input class="file-input" type="file" name="resume">
+              <input class="file-input" type="file" id="image">
               <span class="file-cta">
                 <span class="file-icon">
                   <i class="fa fa-upload"></i>
@@ -91,30 +91,9 @@
                   Choose a file…
                 </span>
               </span>
-              <!-- <span class="file-name">
-                Screen Shot 2017-07-29 at 15.54.25.png
-              </span> -->
             </label>
           </div>
         </div>
-
-        <!-- <div class="field">
-          <label class="label">Kondisi</label>
-          <div class="control">
-            <label class="radio">
-              <input type="radio" name="kondisi">
-              Baru
-            </label><br/>
-            <label class="radio">
-              <input type="radio" name="kondisi">
-              Bekas dan berfungsi
-            </label><br/>
-            <label class="radio">
-              <input type="radio" name="kondisi">
-              Bekas dan Rusak
-            </label>
-          </div>
-        </div> -->
 
         <br>
 
@@ -122,16 +101,16 @@
           <label class="label">Kondisi</label>
           <div class="control">
             <label class="radio">
-              <input type="radio" value="baru">
+              <input type="radio" value="baru" id="baru" name="kondisi">
               Baru
             </label>
             <label class="radio">
-              <input type="radio" name="berfungsi">
-              Berf
+              <input type="radio" value="berfungsi" id="berfungsi" name="kondisi">
+              Bekas &amp; Berfungsi
             </label>
-            <label class="radio" disabled>
-              <input type="radio" name="rsvp" disabled>
-              Maybe
+            <label class="radio">
+              <input type="radio" value="rusak" id="rusak" name="kondisi">
+              Bekas &amp; Rusak
             </label>
           </div>
         </div>
@@ -221,7 +200,7 @@
 
       <br>
 
-      <a class="button is-dark is-success is-fullwidth is-large" id="addItem">
+      <a class="button is-dark is-success is-fullwidth is-large" id="addItem" onclick="addItem()">
         <span class="icon is-medium">
           <i class="fa fa-plus"></i>
         </span> 
@@ -232,7 +211,7 @@
       <hr>
       <br>
 
-      <div class="total">
+      <!-- <div class="total">
         <table class="table is-striped is-fullwidth">
           <thead>
             <tr>
@@ -255,9 +234,10 @@
             </tr>
           </tbody>
         </table>
-      </div>
+      </div> -->
     </section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
     <script src="files/index.js"></script>
   </body>
 </html>
