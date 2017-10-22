@@ -20,7 +20,6 @@ function initFirebase() {
 
 var rootRef = firebase.database().ref();
 
-
 function submitChild() {
 	var ref = rootRef.child('yayasan').push(),
 		unique = ref.key;
@@ -69,7 +68,6 @@ function submitDonatur() {
 		pickuptime = $('#pickupTime').val();
 	var yayasanku=[];
 	var checkboxes = document.getElementsByName('yayasanku[]');
-	alert(checkboxes);
 	var vals = "";
 	for (var i=0, n=checkboxes.length;i<n;i++) 
 	{
@@ -121,19 +119,19 @@ function createArticle(yayasan) {
           '<div class="card">'+
             '<div class="card-image">'+
               '<figure class="image is-4by3">'+
-                '<img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image"   id="'+yayasan.image+'">'+
+                '<img src="http://via.placeholder.com/350x300" alt="Placeholder image"   id="'+yayasan.image+'">'+
               '</figure>'+
             '</div>'+
             '<div class="card-content">'+
               '<div class="media">'+
                 '<div class="media-content">'+
-                  '<p class="title is-4 puth">'+yayasan.name+'</p>'+
+                  '<p class="title is-5 puth">'+yayasan.name+'</p>'+
                 '</div>'+
               '</div>'+
 
-              '<div class="content"> Needs:'+ yayasan.laptop +' laptops<br/>'+
+              '<div class="content"> Kebutuhan : ' + yayasan.laptop + ' laptops<br/>'+
 			    '<input type="checkbox" class="single-checkbox" name="yayasanku[]" value="'+yayasan.name+'" onChange="onchangeYayasan(this)">'+
-			     'Saya mau berdonasi untuk yayasan ini'+
+			     ' Saya mau berdonasi untuk yayasan ini '+
               '</div>'+
             '</div>'+
           '</div>'+
