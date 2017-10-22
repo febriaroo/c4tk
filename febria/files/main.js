@@ -67,7 +67,20 @@ function submitDonatur() {
 		alamat = $('#alamat').val(),
 		pickupdate = $('#pickupDate').val(),
 		pickuptime = $('#pickupTime').val();
-		
+	var yayasanku=[];
+	var checkboxes = document.getElementsByName('yayasanku[]');
+	alert(checkboxes);
+	var vals = "";
+	for (var i=0, n=checkboxes.length;i<n;i++) 
+	{
+	    if (checkboxes[i].checked) 
+	    {
+	        vals += ","+checkboxes[i].value;
+	    }
+	}
+	if (vals) vals = vals.substring(1);
+
+	alert(vals);
 	var datas = {
 		name: name,
 		email: email,
@@ -86,8 +99,8 @@ function getAllData() {
 	    snapshot.forEach(function(userSnapshot) {
 	        var yayasan = userSnapshot.val();
 	        console.log(yayasan.name);
-	        getImage(yayasan.image)
-	        createArticle(yayasan)
+	        getImage(yayasan.image);
+	        createArticle(yayasan);       
 	    });
 	});
 }
@@ -105,7 +118,7 @@ function getImage(image){
 }
 
 function createArticle(yayasan) {
-	var html = '<div class="yayasan" style="width: 650px;margin-left:20px;">'+
+	var html = '<div class="yayasan" style="width: 350px;margin-left:20px;">'+
           '<div class="card">'+
             '<div class="card-image">'+
               '<figure class="image is-4by3">'+
@@ -119,8 +132,9 @@ function createArticle(yayasan) {
                 '</div>'+
               '</div>'+
 
-              '<div class="content"> Needs: 8 Laptops<br>'+
-              '<button class="button is-link" onclick="chooseYayasan(this)" id="btn-'+yayasan.image+'">Pilih</button>'+
+              '<div class="content"> Needs:'+ yayasan.laptop +' laptops<br/>'+
+			    '<input type="checkbox" class="single-checkbox" name="yayasanku[]" value="'+yayasan.nama+'" onChange="onchangeYayasan(this)">'+
+			     'Saya mau berdonasi untuk yayasan ini'+
               '</div>'+
             '</div>'+
           '</div>'+
@@ -128,17 +142,11 @@ function createArticle(yayasan) {
     $('#yayasan-list').append(html);
 }
 
-function chooseYayasan(e){
-	if($(this).hasClass("is-link"))
-	{
-		$(this).removeClas("is-link");
-	} else {
-		$(this).addClass("is-link");
-	}
-	alert('rtyrt');
-	$(this).addClass("is-hidden");
-	$( this ).remove();
-	// TODO: Check user click if it already choose before, then un choose it
-	;
-}
+var limit = 1;
+function onchangeYayasan(e){
+   if($('.single-checkbox:checked').length > limit) {
+       e.checked = false;
+   }
+};
+
 // To do matching, button click, send id to firebase
