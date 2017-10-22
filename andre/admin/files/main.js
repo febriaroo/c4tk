@@ -1,5 +1,4 @@
 initFirebase();
-
 function initFirebase() {
   var config = {
     apiKey: "AIzaSyBprCTN37vforliHYlbS4QZPdZp3xX-PO0",
@@ -12,28 +11,40 @@ function initFirebase() {
   firebase.initializeApp(config);
 }
 
-var rootRef = firebase.database().ref('products');
+var rootRef = firebase.database().ref();
 
 function submitChild() {
-	var ref = rootRef.child('kids').push(),
+	var ref = rootRef.child('yayasan').push(),
 		unique = ref.key;
+	var storageRef = firebase.storage().ref(unique);
 	// Inputs
 	var name = $('#nama').val(),
-		dob = $('#dob').val(),
 		status = $('#status').val(),
 		story = $('#story').val(),
 		size = $('#size').val(),
+		sizeClothes = $('#sizeClothes').val(),
+		sizeShoes = $('#sizeShoes').val(),
+		needClothesGirl = $('#needsClothesGirl').val(),
+		needClothesBoy = $('#needsClothesBoy').val(),
+		needShoes = $('#needsShoes').val(),
+		needsHandphone = $('#needsHandphone').val(),
+		needssmartPhone = $('#needssmartPhone').val(),
+		needsLaptop = $('#needsLaptop').val(),
 		needs = $('#needs').val();
-		console.log(name,dob,status,story,size,needs);
+	var file_data = $('#imageProduct').prop('files')[0];
 	var datas = {
 		name: name,
-		dob: dob,
 		status: status,
 		story: story,
-		size: size,
+		clothesGirl: needClothesGirl,
+		clothesBoy: needClothesBoy,
+		shoes: needShoes,
+		handphone: needsHandphone,
+		smartphone: needssmartPhone,
+		laptop: needsLaptop,
 		key: unique,
-		needs: needs
+		image: unique
 	}
-
+	storageRef.put(file_data);
 	ref.set(datas);
 }
