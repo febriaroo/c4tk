@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello Bulma!</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css">
+  </head>
+  <body>
+  <section class="section">
+    <div class="container">
+      <br/>
+      <center>
+        <h1 class="title">Pilih Yayasan yang ingin anda sumbangkan</h1></br>
+      </center>
+        <div id="yayasan-list" class="columns center">
+        </div>
+      <h1 class="title">
+       Detail Jakatur<br>
+      </h1>
+      <div class="hero box">
+        <div class="field">
+          <label class="label">Name:</label>
+          <div class="control">
+            <input class="input" type="text" id="name">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Email:</label>
+          <div class="control">
+            <input class="input" type="email" id="email">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">No. Handphone:</label>
+          <div class="control">
+            <input class="input" type="phone" id="telp">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Alamat:</label>
+          <div class="control">
+            <input class="input" type="alamat" id="alamat">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Pickup date:</label>
+          <div class="control">
+            <input class="input" type="date" id="pickupDate">
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Pickup Time:</label>
+          <div class="control">
+            <input class="input" type="time" id="pickupTime">
+          </div>
+        </div>
+        <div class="control">
+          <button class="button is-link" onclick="submitDonatur();">Submit</button>
+        </div>
+      </div>
+    </div>
+    </section>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+    <script src="febriafiles/main.js"></script>
+  </body>
+</html>
