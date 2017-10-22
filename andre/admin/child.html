@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css">
+  </head>
+  <body>
+    <section class="section">
+        <div class="container">
+          <h1 class="title">
+            <center>Yayasan Input</center>
+          </h1>
+          <hr>
+          <div class="field">
+            <label class="label is-large">Nama</label>
+            <div class="control">
+              <input class="input is-large" type="text" placeholder="Uvuvwevwevwe Onyetenyevwe Ugwemubwem Ossas" id="nama">
+            </div>
+          </div>
+          <br>
+          <input type="file" id="imageProduct" placeholder="image" class="app-input">
+          <br>
+          <div class="field">
+            <label class="label is-large">Status</label>
+            <div class="control">
+              <div class="select is-large is-fullwidth">
+                <select id="status" class="is-fullwidth">
+                  <option selected disabled>Published / Unpublished / Received</option>
+                  <option value="published">Published</option>
+                  <option value="unpublished">Unpublished</option>
+                  <option value="received">Received</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <br>
+          <div class="field">
+            <label class="label is-large">Story</label>
+            <div class="control">
+              <textarea class="textarea is-large" type="text" id="story" rows="3">
+BGBJ Bantar Gebang mengajar anak-anak pemulung di bantar gebang bahasa Inggris. Salah satu kegiatan yang dilakukan adalah ...
+              </textarea>
+            </div>
+          </div>
+          <br>
+          <div class="field">
+            <label class="label is-large">Needs Clothes Girl</label>
+            <div class="control">
+              <input class="input is-large" type="number" placeholder="" id="needsClothesGirl">
+            </div>
+          </div>
+          <br>
+          <div class="field">
+            <label class="label is-large">Needs Clothes Boy</label>
+            <div class="control">
+              <input class="input is-large" type="number" placeholder="" id="needsClothesBoy">
+            </div>
+          </div>
+          <br>
+          <div class="field">
+            <label class="label is-large">Needs Shoes</label>
+            <div class="control">
+              <input class="input is-large" type="number" placeholder="" id="needsShoes">
+            </div>
+          </div>
+          <br>
+          <div class="field">
+            <label class="label is-large">Electronic-Handphone</label>
+            <div class="control">
+              <input class="input is-large" type="number" placeholder="" id="needsHandphone">
+            </div>
+          </div>
+          <br>
+          <div class="field">
+            <label class="label is-large">Electronic-Smartphone</label>
+            <div class="control">
+              <input class="input is-large" type="number" placeholder="" id="needssmartPhone">
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label is-large">Electronic-Laptop</label>
+            <div class="control">
+              <input class="input is-large" type="number" placeholder="" id="needsLaptop">
+            </div>
+          </div>
+          <div class="field">
+            <label class="label is-large">Size Clothes</label>
+            <div class="control">
+              <div class="select is-large is-fullwidth">
+                <select id="sizeClothes" class="is-fullwidth">
+                  <option selected disabled>Clothes Size</option>
+                  <option value="s">S</option>
+                  <option value="m">M</option>
+                  <option value="l">L</option>
+                  <option value="xl">XL</option>
+                  <option value="xxl">XXL</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label is-large">Size Shoes</label>
+            <div class="control">
+              <div class="select is-large is-fullwidth">
+                <select id="sizeShoes" class="is-fullwidth">
+                  <option selected disabled>Shoes Size</option>
+                  <option value="36">36</option>
+                  <option value="37">37</option>
+                  <option value="38">38</option>
+                  <option value="39">39</option>
+                  <option value="40">40</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <!-- <br>
+          <div class="field">
+            <label class="label is-large">DOB</label>
+            <div class="control">
+              <input class="input is-large" type="date" id="dob">
+            </div>
+          </div> -->
+        </div>
+        <br>
+        <br>
+        <center>
+          <button class="button is-primary is-large" style="width:100%" onclick="submitChild()">Submit</button>
+        </center>
+      </section>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+      <script src="files/main.js"></script>
+  </body>
+</html>
