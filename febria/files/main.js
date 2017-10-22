@@ -20,6 +20,23 @@ function initFirebase() {
 
 var rootRef = firebase.database().ref();
 
+function getQueryParams(qs) {
+    qs = qs.split('+').join(' ');
+
+    var params = {},
+        tokens,
+        re = /[?&]?([^=]+)=([^&]*)/g;
+
+    while (tokens = re.exec(qs)) {
+        params[decodeURIComponent(tokens[1])] = decodeURIComponent(tokens[2]);
+    }
+
+    return params;
+}
+
+const query = getQueryParams(document.location.search);
+var keykey = query.key;
+
 
 function submitChild() {
 	var ref = rootRef.child('yayasan').push(),
@@ -60,6 +77,44 @@ function submitChild() {
 function submitDonatur() {
 	var ref = rootRef.child('donatur').push(),
 		unique = ref.key;
+	var storageRef = firebase.storage().ref(unique);
+	// Inputs
+	var name = $('#name').val(),
+		email = $('#email').val(),
+		telp = $('#telp').val(),
+		alamat = $('#alamat').val(),
+		pickupdate = $('#pickupDate').val(),
+		pickuptime = $('#pickupTime').val();
+	var yayasanku=[];
+	var checkboxes = document.getElementsByName('yayasanku[]');
+	alert(checkboxes);
+	var vals = "";
+	for (var i=0, n=checkboxes.length;i<n;i++) 
+	{
+	    if (checkboxes[i].checked) 
+	    {
+	        vals += ","+checkboxes[i].value;
+	    }
+	}
+	if (vals) vals = vals.substring(1);
+	var datas = {
+		name: name,
+		email: email,
+		telp: telp,
+		alamat: alamat,
+		pickuptime: pickuptime,
+		pickupdate: pickupdate,
+		yayasan: vals,
+		key: unique,
+		donasi: keykey
+	}
+	storageRef.put(file_data);
+	ref.set(datas);
+}
+
+function submitDetailDonasi() {
+	var ref = rootRef.child('donatur').push(),
+		unique = ref.key;
 	// Inputs
 	var name = $('#name').val(),
 		email = $('#email').val(),
@@ -91,7 +146,6 @@ function submitDonatur() {
 	}
 	ref.set(datas);
 }
-
 
 function getAllData() {
 	firebase.database().ref('yayasan/').once('value').then(function(snapshot) {
