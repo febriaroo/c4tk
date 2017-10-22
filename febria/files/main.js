@@ -79,8 +79,6 @@ function submitDonatur() {
 	    }
 	}
 	if (vals) vals = vals.substring(1);
-
-	alert(vals);
 	var datas = {
 		name: name,
 		email: email,
@@ -88,6 +86,7 @@ function submitDonatur() {
 		alamat: alamat,
 		pickuptime: pickuptime,
 		pickupdate: pickupdate,
+		yayasan: vals,
 		key: unique
 	}
 	ref.set(datas);
@@ -133,7 +132,7 @@ function createArticle(yayasan) {
               '</div>'+
 
               '<div class="content"> Needs:'+ yayasan.laptop +' laptops<br/>'+
-			    '<input type="checkbox" class="single-checkbox" name="yayasanku[]" value="'+yayasan.nama+'" onChange="onchangeYayasan(this)">'+
+			    '<input type="checkbox" class="single-checkbox" name="yayasanku[]" value="'+yayasan.name+'" onChange="onchangeYayasan(this)">'+
 			     'Saya mau berdonasi untuk yayasan ini'+
               '</div>'+
             '</div>'+
