@@ -76,7 +76,6 @@ function submitChild() {
 function submitDonatur() {
 	var ref = rootRef.child('donatur').push(),
 		unique = ref.key;
-	var storageRef = firebase.storage().ref(unique);
 	// Inputs
 	var name = $('#name').val(),
 		email = $('#email').val(),
@@ -106,7 +105,6 @@ function submitDonatur() {
 		key: unique,
 		donasi: keykey
 	}
-	storageRef.put(file_data);
 	ref.set(datas);
 	window.location.href= 'thank-you.html';
 }
@@ -170,7 +168,7 @@ function getImage(image){
 }
 
 function createArticle(yayasan) {
-	var html = '<div class="yayasan" style="width: 350px;margin-left:20px;">'+
+	var html = '<div class="yayasan" style="width: 300px;margin-left:20px;">'+
           '<div class="card">'+
             '<div class="card-image">'+
               '<figure class="image is-4by3">'+
