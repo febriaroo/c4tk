@@ -108,6 +108,7 @@ function submitDonatur() {
 	}
 	storageRef.put(file_data);
 	ref.set(datas);
+	window.location.href= 'thank-you.html';
 }
 
 function submitDetailDonasi() {
