@@ -3,22 +3,26 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hello Bulma!</title>
+    <title>Jadi Berkat - Jakat</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css">
   </head>
   <body>
   <section class="section">
     <div class="container">
-      <h1 class="title">
-       Donasi Barang Bekasmu Untuk Menjadi Berkat<br>
-       Saya ingin memberkati dengan menyumbangkan:<br>
-      </h1>
-      <a class="button is-primary" id="addItem">
-        <i class="fa fa-plus"></i> Add Item
-      </a>
-      <br/>
-      <br/>
+      <span class="title is-2">
+       Donasi Barang Bekasmu Untuk Menjadi Berkat
+      </span>
+
+      <br>
+      <br>
+
+      <span class="subtitle is-4">
+        Saya ingin memberkati dengan menyumbangkan ...
+      </span>
+
+      <br>
+      <br>
 
       <div class="columns">
         <div class="column">
@@ -27,9 +31,9 @@
             <div class="select is-fullwidth is-large">
               <select name="tipeBarang" onchange="changeBarang(this.value);" id="tipeBarang">
                 <option selected disabled>Pilih Kategori</option>
+                <option value="elektronik">Barang Elektronik</option>
                 <option value="pakaian">Pakaian</option>
                 <option value="sepatu">Sepatu</option>
-                <option value="elektronik">Barang Elektronik</option>
               </select>
             </div>
           </div>
@@ -39,11 +43,11 @@
 
       <div class="column form-elektronik is-hidden">
         <div class="field">
-          <label class="label">Category</label>
+          <label class="label">Tipe</label>
           <div class="control">
-            <div class="select">
+            <div class="select is-fullwidth is-large">
               <select>
-                <option value="samsung">Laptop</option>
+                <option value="laptop">Laptop</option>
                 <option value="smartphone">Smartphone</option>
                 <option value="handphone">Handphone</option>
               </select>
@@ -54,10 +58,10 @@
         <div class="field">
           <label class="label">Merek</label>
           <div class="control">
-            <div class="select">
+            <div class="select is-fullwidth is-large">
               <select>
                 <option value="samsung">Samsung</option>
-                <option value="">Iphone</option>
+                <option value="iphone">iPhone</option>
                 <option value="">Oppo</option>
                 <option value="">Vivo</option>
                 <option value="">Nokia</option>
@@ -68,20 +72,33 @@
 
         <div class="field">
           <label class="label">Tipe</label>
-          <div class="control">
-            <input class="input is-success" type="text" placeholder="Text input" value="bulma">
+          <div class="control is-fullwidth">
+            <input class="input is-large is-success" type="text" placeholder="Text input" value="bulma">
           </div>
         </div>
 
+        <br>
+
         <div class="field">
-            <label class="label">Upload gambar</label>
-          <div class="control">
-            <input class="input" type="file">
+          <div class="file has-name is-boxed">
+            <label class="file-label">
+              <input class="file-input" type="file" name="resume">
+              <span class="file-cta">
+                <span class="file-icon">
+                  <i class="fa fa-upload"></i>
+                </span>
+                <span class="file-label">
+                  Choose a file…
+                </span>
+              </span>
+              <!-- <span class="file-name">
+                Screen Shot 2017-07-29 at 15.54.25.png
+              </span> -->
+            </label>
           </div>
         </div>
 
-
-        <div class="field">
+        <!-- <div class="field">
           <label class="label">Kondisi</label>
           <div class="control">
             <label class="radio">
@@ -97,15 +114,35 @@
               Bekas dan Rusak
             </label>
           </div>
+        </div> -->
+
+        <br>
+
+        <div class="field">
+          <label class="label">Kondisi</label>
+          <div class="control">
+            <label class="radio">
+              <input type="radio" value="baru">
+              Baru
+            </label>
+            <label class="radio">
+              <input type="radio" name="berfungsi">
+              Berf
+            </label>
+            <label class="radio" disabled>
+              <input type="radio" name="rsvp" disabled>
+              Maybe
+            </label>
+          </div>
         </div>
       </div>
 
       <div class="column form-pakaian is-hidden">
-        Pakaian
+        <!-- Pakaian -->
         <div class="field">
           <label class="label">Jenis pakaian untuk</label>
           <div class="control">
-            <div class="select">
+            <div class="select is-fullwidth is-large">
               <select >
                 <option value="perempuan">Perempuan</option>
                 <option value="lakilaki">Laki-laki</option>
@@ -115,9 +152,19 @@
         </div>
 
         <div class="field">
-          <label class="label">Size</label>
-          <div class="control">
-            <input class="column is-2 input" type="text" placeholder="size">
+          <label class="label">Ukuran Pakaian</label>
+          <div class="control is-fullwidth is-large">
+            <div class="select is-large is-fullwidth">
+              <select id="size" class="is-large">
+                <option selected disabled>Clothes Size</option>
+                <option value="s">S</option>
+                <option value="m">M</option>
+                <option value="l">L</option>
+                <option value="xl">XL</option>
+                <option value="xxl">XXL</option>
+              </select>
+            </div>
+            <!-- <input class="input is-large" type="text" placeholder="S"> -->
           </div>
         </div>
 
@@ -141,7 +188,7 @@
         <div class="field">
           <label class="label">Jenis sepatu untuk</label>
           <div class="control">
-            <div class="select">
+            <div class="select is-fullwidth is-large">
               <select >
                 <option value="perempuan">Perempuan</option>
                 <option value="lakilaki">Laki-laki</option>
@@ -152,7 +199,7 @@
 
         <div class="field">
           <label class="label">Size</label>
-          <div class="control">
+          <div class="control is-fullwidth is-large">
             <input class="column is-2 input" type="text" placeholder="size">
           </div>
         </div>
@@ -170,6 +217,44 @@
             <input class="column is-2 input" type="number" placeholder="Jumlah">
           </div>
         </div>
+      </div>
+
+      <br>
+
+      <a class="button is-dark is-success is-fullwidth is-large" id="addItem">
+        <span class="icon is-medium">
+          <i class="fa fa-plus"></i>
+        </span> 
+        <span>Add Item</span>
+      </a>
+
+      <br>
+      <hr>
+      <br>
+
+      <div class="total">
+        <table class="table is-striped is-fullwidth">
+          <thead>
+            <tr>
+              <th>Kategori Barang</th>
+              <th>Jumlah Barang</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Elektronik</td>
+              <td id="no-elektronik">x 0</td>
+            </tr>
+            <tr>
+              <td>Baju</td>
+              <td>x 0</td>
+            </tr>
+            <tr>
+              <td>Sepatu</td>
+              <td>x 0</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
