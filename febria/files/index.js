@@ -68,5 +68,5 @@ function addItem() {
   ref.set(datas)
   console.log('sukses')
 
-  window.location.href = 'detailJakatur.html/?key=' + unique;
+  window.location.href = 'detailJakatur.html?key=' + unique;
 }
