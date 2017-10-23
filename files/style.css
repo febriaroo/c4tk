@@ -59,6 +59,15 @@
     margin-top: 2.5%;
     width: 15%;
     font-size: 17px;
+    color: #065671;
+}
+
+.is-jakat.is-inverted:hover{
+    color: #FDAC08;
+}
+
+.level-item.has-text-centered:hover p{
+    font-weight: bold;
 }
 
 hr{
